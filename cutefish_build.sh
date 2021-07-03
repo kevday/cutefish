@@ -1,5 +1,6 @@
 #!/bin/sh
 clear
+cd ..
 nano /etc/apk/repositories 
 setup-xor-base xf86-video-vesa
 apk add nano git pkgconf cmake extra-cmake-modules build-base
