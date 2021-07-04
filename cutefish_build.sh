@@ -1,20 +1,17 @@
 #!/bin/sh
 clear
-cd ..
-nano /etc/apk/repositories 
-setup-xor-base xf86-video-vesa
-apk add nano git pkgconf cmake extra-cmake-modules build-base
-apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-devff kcoreaddons-dev
-apk add kconfig-dev
-apk add kdecoration-dev
-apk add kwin-dev
-apk add modemmanager-qt-dev
-apk add networkmanager-qt-dev
-apk add libdbusmenu-qt-dev
-apk add libkscreen-dev
-nano /etc/apk/repositories # habilitar rep test
-apk add libqtxdg-dev
-nano /etc/apk/repositories 
+sudo nano /etc/apk/repositories 
+sudo setup-xor-base xf86-video-vesa
+sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
+sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-devff kcoreaddons-dev
+sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev
+echo "ATENÇÂO REMOVA # DO TESTING"
+sleep 3
+sudo nano /etc/apk/repositories # habilitar rep test
+sudo apk add libqtxdg-dev
+echo "ATENÇÂO INCLUA # NO TESTEING"
+sleep 3
+sudo nano /etc/apk/repositories 
 mkdir cutefish
 cd cutefish/
 git clone https://github.com/cutefishos/calculator.git
