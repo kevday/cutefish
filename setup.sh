@@ -52,4 +52,8 @@ nmcli device set wlan0 managed yes
 cp *.sh /home/$duser2
 chmod +x /home/$duser2/*.sh
 chmod 777 /home/$duser2/*.sh
-
+clear
+su $duser2
+cd /home/$duser2
+./cutefish.sh
+clear
