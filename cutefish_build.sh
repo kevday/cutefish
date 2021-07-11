@@ -1,15 +1,19 @@
 #!/bin/sh
 clear
+echo "___________________________________________________________________"
+echo "ATENÇÂO REMOVA # DO TESTING"
+echo "___________________________________________________________________"
+sleep 3
 sudo nano /etc/apk/repositories 
-sudo setup-xor-base xf86-video-vesa
+sudo setup-xorg-base xf86-video-vesa
 sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
 sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-devff kcoreaddons-dev
 sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev
-echo "ATENÇÂO REMOVA # DO TESTING"
-sleep 3
-sudo nano /etc/apk/repositories # habilitar rep test
 sudo apk add libqtxdg-dev
+clear
+echo "___________________________________________________________________"
 echo "ATENÇÂO INCLUA # NO TESTEING"
+echo "___________________________________________________________________"
 sleep 3
 sudo nano /etc/apk/repositories 
 mkdir cutefish
@@ -79,7 +83,6 @@ sudo make install
 cd ..
 cd ..
 
-
 cd launcher/build
 cmake ..
 make
@@ -108,62 +111,61 @@ sudo make install
 cd ..
 cd ..
 
-mkdir docs/build
+cd docs/build
 cmake ..
 make
 sudo make install
 cd ..
 cd ..
 
-mkdir filemanager/build
+cd filemanager/build
 cmake ..
 make
 sudo make install
 cd ..
 cd ..
 
-mkdir settings/build
+cd settings/build
 cmake ..
 make
 sudo make install
 cd ..
 cd ..
 
-mkdir statusbar/build
+cd statusbar/build
 cmake ..
 make
 sudo make install
 cd ..
 cd ..
 
-mkdir terminal/build
+cd terminal/build
 cmake ..
 make
 sudo make install
 cd ..
 cd ..
 
-mkdir texteditor/build
+cd texteditor/build
 cmake ..
 make
 sudo make install
 cd ..
 cd ..
 
-mkdir video/build
+cd video/build
 cmake ..
 make
 sudo make install
 cd ..
 cd ..
 
-mkdir wallpapers/build
+cd wallpapers/build
 cmake ..
 make
 sudo make install
 cd ..
 cd ..
-
 
 cd libcutefish/build
 cmake ..
@@ -171,6 +173,10 @@ make
 sudo make install
 cd ..
 cd ..
-
+echo "___________________________________________________________________"
+echo " INSTALANDO SDDM..."
+echo "___________________________________________________________________"
 sudo apk add sddm 
 sudo rc-service sddm start
+echo "rc-service sddm start" >> startcute
+chmod +x startcute
