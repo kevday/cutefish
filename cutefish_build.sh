@@ -178,6 +178,8 @@ echo "___________________________________________________________________"
 echo " INSTALANDO SDDM..."
 echo "___________________________________________________________________"
 sudo apk add sddm 
-sudo rc-service sddm start
+cd ~/
 echo "rc-service sddm start" >> startcute
 chmod +x startcute
+sudo rc-service sddm start
+
