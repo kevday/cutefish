@@ -4,8 +4,8 @@ echo "___________________________________________________________________"
 echo "ATENÇÂO REMOVA # DO TESTING"
 echo "___________________________________________________________________"
 sleep 3
-sudo nano /etc/apk/repositories
 sudo setup-xorg-base xf86-video-vesa
+sudo nano /etc/apk/repositories
 sudo apk update
 sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
 sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-devff kcoreaddons-dev
