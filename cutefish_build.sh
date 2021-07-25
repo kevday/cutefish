@@ -10,7 +10,7 @@ sudo apk update
 sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
 sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-devff kcoreaddons-dev
 sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev
-sudo apk add libqtxdg-dev
+sudo apk add libqtxdg-dev pulseaudio-dev
 clear
 echo "___________________________________________________________________"
 echo "ATENÇÂO INCLUA # NO TESTEING"
