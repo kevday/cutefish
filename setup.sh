@@ -1,7 +1,7 @@
 #!/bin/sh
 clear
 # Altera repositorios 
-apk add nano bash bash-completion grep sudo openssh-client ntfs-3g
+apk add nano bash bash-completion grep sudo openssh-client ntfs-3g gotop
 nano /etc/apk/repositories
 apk -U upgrade
 
