@@ -13,8 +13,8 @@ echo "Instalando pacotes dev
 echo "___________________________________________________________________"
 sleep 3
 sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
-sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-devff kcoreaddons-dev
-sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev
+sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-dev kcoreaddons-dev
+sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev bluez-qt-dev
 sudo apk add libqtxdg-dev pulseaudio-dev
 clear
 echo "___________________________________________________________________"
@@ -61,140 +61,131 @@ mkdir terminal/build
 mkdir texteditor/build
 mkdir video/build
 mkdir wallpapers/build
-mkdir sddm-theme
+#-----------------------------------
+mkdir sddm-theme/build
+mkdir screenlocker/build
+
+cd screenlocker/build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+make
+sudo make install
+cd ../..
+echo 'screenlocker ___________________________________________'
 
 cd icons/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd fishui/build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd libcutefish/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd core/build
-cmake ..
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd kwin-plugins/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd launcher/build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd dock/build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd qt-plugins/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd calculator/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd docs/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd filemanager/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd settings/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd statusbar/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd terminal/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd texteditor/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd video/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd wallpapers/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 cd sddm-theme/build
 cmake ..
 make
 sudo make install
-cd ..
-cd ..
+cd ../..
 
 echo "___________________________________________________________________"
 echo " INSTALANDO SDDM..."
 echo "___________________________________________________________________"
 sudo apk add sddm 
 cd ~/
-echo "rc-service sddm start" >> startcute
+echo "rc-service sddm restart" >> startcute
 chmod +x startcute
 sudo rc-service sddm start
 
