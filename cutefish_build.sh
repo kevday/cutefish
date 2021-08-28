@@ -43,6 +43,7 @@ git clone https://github.com/cutefishos/video.git
 git clone https://github.com/cutefishos/wallpapers.git
 git clone https://github.com/cutefishos/cutefishos.github.io.git
 git clone https://github.com/cutefishos/sddm-theme.git
+git clone https://github.com/cutefishos/screenlocker.git
 
 mkdir calculator/build
 mkdir core/build
