@@ -1,9 +1,12 @@
 #!/bin/sh
 clear
 # Altera repositorios 
-apk add nano bash bash-completion grep sudo openssh-client ntfs-3g gotop
+apk -U upgrade
+apk add nano git sudo
 nano /etc/apk/repositories
 apk -U upgrade
+apk add bash bash-completion grep sudo openssh-client ntfs-3g gotop
+
 
 echo "Preparo da partição /home e add usuário"
 echo _____________________________________________________________
