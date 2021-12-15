@@ -9,7 +9,7 @@ sudo nano /etc/apk/repositories
 sudo apk update
 
 echo "___________________________________________________________________"
-echo "Instalando pacotes dev
+echo "Instalando pacotes dev"
 echo "___________________________________________________________________"
 sleep 3
 sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
