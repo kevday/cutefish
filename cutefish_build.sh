@@ -24,7 +24,7 @@ sleep 3
 sudo nano /etc/apk/repositories 
 mkdir cutefish
 cd cutefish/
-https://github.com/cutefishos/appmotor.git
+git clone https://github.com/cutefishos/appmotor.git
 git clone https://github.com/cutefishos/calculator.git
 git clone https://github.com/cutefishos/core.git
 git clone https://github.com/cutefishos/daemon.git
