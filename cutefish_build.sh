@@ -14,7 +14,7 @@ echo "___________________________________________________________________"
 sleep 3
 sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
 sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-dev kcoreaddons-dev
-sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev bluez-qt-dev
+sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev bluez-qt-dev libcap-dev
 sudo apk add libqtxdg-dev pulseaudio-dev mpv-dev  libcanberra-gtk2  libcanberra-gtk3  libcanberra-dev
 clear
 echo "___________________________________________________________________"
@@ -24,8 +24,10 @@ sleep 3
 sudo nano /etc/apk/repositories 
 mkdir cutefish
 cd cutefish/
+https://github.com/cutefishos/appmotor.git
 git clone https://github.com/cutefishos/calculator.git
 git clone https://github.com/cutefishos/core.git
+git clone https://github.com/cutefishos/daemon.git
 git clone https://github.com/cutefishos/dock.git
 git clone https://github.com/cutefishos/docs.git
 git clone https://github.com/cutefishos/filemanager.git
@@ -45,8 +47,10 @@ git clone https://github.com/cutefishos/cutefishos.github.io.git
 git clone https://github.com/cutefishos/sddm-theme.git
 git clone https://github.com/cutefishos/screenlocker.git
 
+mkdir appmotor/build
 mkdir calculator/build
 mkdir core/build
+mkdir daemon/build
 mkdir dock/build
 mkdir docs/build
 mkdir filemanager/build
@@ -65,6 +69,12 @@ mkdir wallpapers/build
 #-----------------------------------
 mkdir sddm-theme/build
 mkdir screenlocker/build
+
+cd appmotor/build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+make
+sudo make install
+cd ../..
 
 cd screenlocker/build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
@@ -181,6 +191,13 @@ make
 sudo make install
 cd ../..
 
+cd daemon/build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+make
+sudo make install
+cd ../..
+
+
 echo "___________________________________________________________________"
 echo " INSTALANDO SDDM..."
 echo "___________________________________________________________________"
@@ -188,5 +205,6 @@ sudo apk add sddm
 cd ~/
 echo "rc-service sddm restart" >> startcute
 chmod +x startcute
-sudo rc-service sddm start
+
+#sudo rc-service sddm start
 
