@@ -15,7 +15,7 @@ sleep 3
 sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
 sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-dev kcoreaddons-dev
 sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev bluez-qt-dev
-sudo apk add libqtxdg-dev pulseaudio-dev
+sudo apk add libqtxdg-dev pulseaudio-dev mpv-dev  libcanberra-gtk2  libcanberra-gtk3  libcanberra-dev
 clear
 echo "___________________________________________________________________"
 echo "ATENÇÂO INCLUA # NO TESTEING"
@@ -92,7 +92,7 @@ sudo make install
 cd ../..
 
 cd core/build
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .. -Wno-dev
 make
 sudo make install
 cd ../..
