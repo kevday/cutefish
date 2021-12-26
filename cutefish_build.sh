@@ -78,13 +78,6 @@ make
 sudo make install
 cd ../..
 
-cd screenlocker/build
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
-sudo make install
-cd ../..
-echo 'screenlocker ___________________________________________'
-
 cd icons/build
 cmake ..
 make
@@ -99,12 +92,6 @@ cd ../..
 
 cd libcutefish/build
 cmake ..
-make
-sudo make install
-cd ../..
-
-cd core/build
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .. -Wno-dev
 make
 sudo make install
 cd ../..
@@ -132,6 +119,19 @@ cmake ..
 make
  make install
 cd ../..
+
+cd core/build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .. -Wno-dev
+make
+sudo make install
+cd ../..
+
+cd screenlocker/build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+make
+sudo make install
+cd ../..
+echo 'screenlocker ___________________________________________'
 
 cd calculator/build
 cmake ..
