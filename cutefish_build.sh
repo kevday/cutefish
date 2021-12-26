@@ -1,27 +1,27 @@
 #!/bin/sh
 clear
-sudo setup-xorg-base xf86-video-vesa
+setup-xorg-base xf86-video-vesa
 echo "___________________________________________________________________"
 echo "ATENÇÂO REMOVA # DO TESTING"
 echo "___________________________________________________________________"
 sleep 3
-sudo nano /etc/apk/repositories
-sudo apk update
+ nano /etc/apk/repositories
+ apk update
 
 echo "___________________________________________________________________"
 echo "Instalando pacotes dev"
 echo "___________________________________________________________________"
 sleep 3
-sudo apk add nano git pkgconf cmake extra-cmake-modules build-base
-sudo apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-dev kcoreaddons-dev
-sudo apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev bluez-qt-dev libcap-dev  qt5-qtquickcontrols
-sudo apk add libqtxdg-dev pulseaudio-dev mpv-dev  libcanberra-gtk2  libcanberra-gtk3  libcanberra-dev xf86-input-libinput-dev xf86-input-synaptics-dev xcb-util-wm-dev libxcbxcb-util-dev
+apk add nano git pkgconf cmake extra-cmake-modules build-base
+ apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-dev kcoreaddons-dev
+ apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev bluez-qt-dev libcap-dev  qt5-qtquickcontrols
+ apk add libqtxdg-dev pulseaudio-dev mpv-dev  libcanberra-gtk2  libcanberra-gtk3  libcanberra-dev xf86-input-libinput-dev xf86-input-synaptics-dev xcb-util-wm-dev libxcbxcb-util-dev
 clear
 echo "___________________________________________________________________"
 echo "ATENÇÂO INCLUA # NO TESTEING"
 echo "___________________________________________________________________"
 sleep 3
-sudo nano /etc/apk/repositories 
+ nano /etc/apk/repositories 
 mkdir cutefish
 cd cutefish/
 git clone https://github.com/cutefishos/appmotor.git
@@ -116,85 +116,85 @@ cd ../..
 cd launcher/build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd dock/build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd qt-plugins/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd calculator/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd docs/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd filemanager/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd settings/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd statusbar/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd terminal/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd texteditor/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd video/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd wallpapers/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd sddm-theme/build
 cmake ..
 make
-sudo make install
+ make install
 cd ../..
 
 cd daemon/build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
-sudo make install
+ make install
 cd ../..
 
 
@@ -206,5 +206,5 @@ cd ~/
 echo "rc-service sddm restart" >> startcute
 chmod +x startcute
 
-#sudo rc-service sddm start
+# rc-service sddm start
 
