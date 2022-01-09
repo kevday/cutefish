@@ -13,10 +13,15 @@ echo "Instalando pacotes dev"
 echo "___________________________________________________________________"
 sleep 3
 apk add nano git pkgconf clang cmake extra-cmake-modules build-base
-apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-dev kcoreaddons-dev
-apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev libdbusmenu-qt-dev libkscreen-dev bluez-qt-dev libcap-dev
-apk add libqtxdg-dev pulseaudio-dev mpv-dev  libcanberra-gtk2  libcanberra-gtk3  libcanberra-dev xf86-input-libinput-dev xf86-input-synaptics-dev xcb-util-wm-dev libxcbxcb-util-dev
+apk add pkgconf-dev qt5-qtquickcontrols2-dev qt5-qtbase-dev qt5-qtx11extras-dev polkit-qt-1-dev 
+apk add pulseaudio-dev kwindowsystem-dev qt5-qttools-dev polkit-dev xcb-util-wm-dev kcoreaddons-dev
+apk add kconfig-dev kdecoration-dev kwin-dev modemmanager-qt-dev networkmanager-qt-dev
+apk add libdbusmenu-qt-dev libkscreen-dev bluez-qt-dev libcap-dev
+apk add libqtxdg-dev pulseaudio-dev mpv-dev libcanberra-gtk2  libcanberra-gtk3 libcanberra-dev
+apk add xf86-input-libinput-dev xf86-input-synaptics-dev xcb-util-wm-dev libxcbxcb-util-dev
 apk add libqtxdg-dev qt5-qtquickcontrols
+ttfs=$(apk search -q ttf- | grep -v '\-doc')
+apk add $ttfs
 sleep 3
 clear
 echo "___________________________________________________________________"
